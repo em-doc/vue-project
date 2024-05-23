@@ -10,6 +10,7 @@ export default {
   },
   data() {
     return {
+      // These are the initial items set up with default done status
       ToDoItems: [
         { id: "todo-" + nanoid(), label: "Learn Vue", done: false },
         {
@@ -34,6 +35,9 @@ export default {
       const toDoToUpdate = this.ToDoItems.find((item) => item.id === toDoId)
       toDoToUpdate.done = !toDoToUpdate.done
     },
+    removeToDo(/* Insert input here */) {
+      // Need to put in this function with next lesson
+    }
   },
   computed: {
     listSummary() {
