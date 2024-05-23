@@ -4,7 +4,7 @@ This is my personal project to learn Vue using Vite. I do not claim ownership of
 
 ## I am using:
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar).
 
 ## Project Setup
 
