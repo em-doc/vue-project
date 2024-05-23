@@ -8,9 +8,8 @@
 </template>
 
 <script>
-// Maybe we will come back to this idea //
-/* import JSConfetti from 'js-confetti'
-const jsConfetti = new JSConfetti() */
+import JSConfetti from 'js-confetti'
+const jsConfetti = new JSConfetti()
 
 export default {
     methods: {
@@ -22,13 +21,13 @@ export default {
             this.label = "";
         },
         // Function to launch confetti //
-        /* launchConfetti() {
+        launchConfetti() {
             jsConfetti.addConfetti({
                 confettiColors: ['#ff0a54', '#ff477e', '#ff7096', '#ff85a1', '#fbb1bd', '#f9bec7'],
                 confettiRadius: 6,
                 confettiNumber: 100,
             })
-        }, */
+        },
     },
     data() {
         return {

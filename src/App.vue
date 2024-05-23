@@ -1,12 +1,14 @@
 <script>
 import ToDoItem from "./components/ToDoItem.vue";
 import ToDoForm from "./components/ToDoForm.vue";
+import ToDoItemEditForm from "./components/ToDoItemEditForm.vue"
 import { nanoid } from "nanoid";
 
 export default {
   components: { // Component registration
     ToDoItem,
     ToDoForm,
+    ToDoItemEditForm
   },
   data() {
     return {
@@ -35,9 +37,16 @@ export default {
       const toDoToUpdate = this.ToDoItems.find((item) => item.id === toDoId)
       toDoToUpdate.done = !toDoToUpdate.done
     },
-    removeToDo(/* Insert input here */) {
-      // Need to put in this function with next lesson
+    deleteToDo(toDoId) {
+      const itemIndex = this.ToDoItems.findIndex((item) => item.id === toDoId);
+      this.ToDoItems.splice(itemIndex, 1);
+      this.$refs.listSummary.focus();
+    },
+    editToDo(toDoId, newLabel) {
+      const toDoToEdit = this.ToDoItems.find((item) => item.id === toDoId);
+      toDoToEdit.label = newLabel;
     }
+
   },
   computed: {
     listSummary() {
@@ -52,11 +61,13 @@ export default {
 <template>
   <h1>To-Do List</h1>
   <to-do-form @todo-added="addToDo"></to-do-form>
-  <h2 id="list-summary">{{ listSummary }}</h2>
+  <h2 id="list-summary" ref="listSummary" tabindex="-1">{{ listSummary }}</h2>
   <ul aria-labelledby="list-summary" class="stack-large">
     <li v-for="item in ToDoItems" :key="item.id">
       <to-do-item :label="item.label" :done="item.done" :id="item.id" @checkbox-changed="updateDoneStatus(item.id)"
-        @remove-item="removeToDo(item.id)"></to-do-item>
+        @item-deleted="deleteToDo(item.id)" @item-edited="editToDo(item.id, $event)">
+      </to-do-item>
+
     </li>
   </ul>
 </template>
