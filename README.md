@@ -1,14 +1,10 @@
-# vue-project
+# 😇 vue-project 😇
 
-This template should help get you started developing with Vue 3 in Vite.
+This is my personal project to learn Vue using Vite. I do not claim ownership of any of the content.
 
-## Recommended IDE Setup
+## I am using:
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
